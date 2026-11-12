@@ -139,7 +139,7 @@ def main():
             st.header(f"Current weather metrics for {coordinate_data[2]} ({coordinate_data[3]}), {coordinate_data[4]}")
 
             if current_df is not None:
-                with SqliteDb("danielkrimer/weather_db") as db:
+                with SqliteDb("weather_db 2") as db:
                     db.write_single_record("weather", {"location": f"{coordinate_data[2]}-{coordinate_data[3]}-{coordinate_data[4]}",
                                                         "temperature": current_df["Temperature (°C)"].loc[0],
                                                         "wind_speed": current_df["Wind speed (km/h)"].loc[0],
